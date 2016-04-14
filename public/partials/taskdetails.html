@@ -1,0 +1,11 @@
+<div class="list" ng-controller='TaskDetailsController'>
+  <h1>{{task.name}}</h1>
+  <h3>Completed: {{task.completed}}</h3>
+  <h3>Deadline: {{task.deadline}}</h3>
+  <h4> Assigned User Name: {{task.assignedUserName}}</h4>
+  <p>{{task.description}}</p>
+  <button class="button" ng-click="changeStatus()">Change Status</button>
+  <a ng-href="#/edittask/{{task._id}}">
+    <div class="button">Edit</div>
+  </a>
+</div>

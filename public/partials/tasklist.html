@@ -1,0 +1,45 @@
+<div class="list" ng-controller='TaskListController'>
+<h1>Tasks</h1>
+<a href='#/addtask'>
+	<div class="button">Add task</div>
+</a>
+<button class='button' ng-click="previous10()">Previous 10</button>
+<button class='button' ng-click="next10()">Next 10</button>
+
+<button class='button' ng-click="viewPending()">View Pending</button>
+<button class='button' ng-click="viewComplete()">View Complete</button>
+<button class='button' ng-click="viewAll()">View All Tasks</button>
+
+		<label>Sort By<span style="color:red">*</span></label>
+		<select name="userSelect" id="repeatSelect" ng-model="sortBy">
+      		<option value="name">Task Name</option>
+      		<option value="assignedUserName">Assigned User</option>
+      		<option value="deadline">Deadline</option>
+      		<option value="dateCreated">Create Date</option>
+   		</select>
+   		<label>Order By</label>
+   		<input type="radio" ng-model="orderBy" value="1" checked>
+		<label>Ascending</label>
+		<input type="radio" ng-model="orderBy" value="-1">
+		<label>Descending</label>
+
+		<button class="small button" ng-click="sortTasks()">Sort Tasks</button>
+		<button class="small button" ng-click="clearSort()">Clear Sort</button>
+
+  <div class="row" ng-repeat="task in tasks">
+  	<div class="columns large-10">
+	  	<a ng-href="#/tasks/{{task._id}}">
+	  		<div class="user-container">
+		  		<h3>{{task.name}}</h3>
+		  		<p>Description: {{task.description}}</p>
+		  		<p>Deadline: {{task.deadline}}</p>
+		  		<p>Assigned To: {{task.assignedUserName}}</p>
+		  		<p>Complete?: {{task.completed}}</p>
+			</div>
+		</a>
+	</div>
+	<div class="columns large-2">
+		<button class="button" ng-click="deleteTask(task.assignedUser, task._id, task.completed)">Delete</button>
+	</div>
+  </div>
+</div>

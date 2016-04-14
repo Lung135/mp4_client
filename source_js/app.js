@@ -18,6 +18,34 @@ app.config(['$routeProvider', function($routeProvider) {
     templateUrl: 'partials/llamalist.html',
     controller: 'LlamaListController'
   }).
+  when('/userlist', {
+    templateUrl: 'partials/userlist.html',
+    controller: 'UserListController'
+  }).
+  when('/userlist/:userid*', {
+            templateUrl : './partials/userdetails.html',
+            controller  : 'UserDetailsController',
+  }).
+  when('/tasks/:taskid*', {
+            templateUrl : './partials/taskdetails.html',
+            controller  : 'TaskDetailsController',
+  }).
+  when('/edittask/:taskid*', {
+            templateUrl : './partials/edittask.html',
+            controller  : 'EditTaskController',
+  }).
+  when('/adduser', {
+            templateUrl : './partials/adduser.html',
+            controller  : 'AddUserController',
+  }).
+  when('/addtask', {
+            templateUrl : './partials/addtask.html',
+            controller  : 'AddTaskController',
+  }).
+  when('/tasklist', {
+            templateUrl : './partials/tasklist.html',
+            controller  : 'TaskListController',
+  }).
   otherwise({
     redirectTo: '/settings'
   });

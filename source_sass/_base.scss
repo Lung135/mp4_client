@@ -1,1 +1,18 @@
-// Add any custom Sass & CSS here
+.full-width {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: initial;
+}
+
+.user-container {
+	margin: 3px;
+	background-color: $offwhite;
+	text-align: left;
+	h1 {
+		font-size: 16px;
+	}
+}
+.user-container:hover {
+	background-color: $lightergray;
+}

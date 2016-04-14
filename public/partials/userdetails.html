@@ -1,0 +1,31 @@
+<div class="list" ng-controller='UserDetailsController'>
+<!--   <ul>
+    <li ng-repeat="user in users.data">
+      <h3>{{user.name}}</h3>
+      <p>{{user.email}}</p>
+    </li>
+  </ul> -->
+  <h1>{{user.data.name}}</h1>
+  <h4>{{user.data.email}}</h4>
+  <h3>Pending Tasks:</h3>
+  <div ng-repeat="task in tasks.data">
+    <h4>{{task.name}}</h4>
+    <p>{{task.deadline}}</p>
+    <p>{{task.description}}</p>
+    <button class="button" ng-click="completeTask(task._id)">Mark Completed</button>
+    <a ng-href="#/tasks/{{task._id}}">
+      <div class="button">View Details</div>
+    </a>
+  </div>
+  <h3>Completed Tasks:</h3>
+  <button class="button" ng-click="showCompletedTasks()">Show Completed Tasks</button>
+  <div ng-repeat="task in alltasks | filter: {assignedUser: user.data._id, completed: 'true'}">
+    <h4>{{task.name}}</h4>
+    <p>{{task.deadline}}</p>
+    <p>{{task.description}}</p>
+    <a ng-href="#/tasks/{{task._id}}">
+      <div class="button">View Details</div>
+    </a>
+  </div>
+
+</div>

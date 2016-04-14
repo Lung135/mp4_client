@@ -1,0 +1,22 @@
+<div class="list" ng-controller='UserListController'>
+<h1>Users</h1>
+<a href='#/adduser'>
+	<div class="button">Add user</div>
+</a>
+  <div class="row" ng-repeat="user in users.data">
+  	<div class="columns large-8">
+	  	<a ng-href="#/userlist/{{user._id}}">
+	  		<div class="user-container">
+		  		<h3>{{user.name}}</h3>
+		  		<p>email: {{user.email}}</p>
+			</div>
+		</a>
+	</div>
+	<div class="columns large-2">
+		<!-- <button class="button" ng-click="editUser(user._id)">Edit</button> -->
+	</div>
+	<div class="columns large-2">
+		<button class="button" ng-click="deleteUser(user._id, user.pendingTasks)">Delete</button>
+	</div>
+  </div>
+</div>

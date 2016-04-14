@@ -20,3 +20,12 @@ mp4Services.factory('Llamas', function($http, $window) {
         }
     }
 });
+
+mp4Services.factory('Users', function($http, $window) {
+    return {
+        get : function() {
+            var baseUrl = $window.sessionStorage.baseurl;
+            return $http.get(baseUrl+'/api/users');
+        }
+    }
+});

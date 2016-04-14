@@ -1,0 +1,11 @@
+<div class="list" ng-controller='AddUserController'>
+<h1>Add a user!</h1> {{hi}}
+	<form ng-submit="addUser()">
+		<label>Name<span style="color:red">*</span></label>
+   		<input type="text" ng-model="name" placeholder="Name" required/>
+   		<label>Email<span style="color:red">*</span></label>
+   		<input type="email" ng-model="email" placeholder="email" required/>
+    	<button class="small button" type="submit">Add User</button>
+	</form>
+	<div>Status: {{message}}</div>
+</div>

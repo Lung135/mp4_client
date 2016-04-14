@@ -1,0 +1,28 @@
+<div class="list" ng-controller='EditTaskController'>
+  <h1>Edit Task!</h1>
+  <form ng-submit="editTask()">
+    <label>Name<span style="color:red">*</span></label>
+      <input type="text" ng-model="name" placeholder="Name" required/>
+
+      <label>Description</label>
+      <input type="text" ng-model="description" placeholder="Description"/>
+
+      <label for="userSelect"> Assign User: (Current User is: {{assignedUserName}}) </label>
+      <select name="userSelect" id="repeatSelect" ng-model="assignedUserObj">
+          <option ng-repeat="user in users" value="{{user}}">{{user.name}}</option>
+      </select>
+
+      <!-- <label>User id</label>
+      <input type="text" ng-model="assignedUser" placeholder="user id"/>
+
+      <label>User Name</label>
+      <input type="text" ng-model="assignedUserName" placeholder="user name" /> -->
+
+      <label>Deadline<span style="color:red">*</span> (Current Deadline: {{deadlinedate.substring(0,10)}})</label>
+      <input type="date" ng-model="deadline" placeholder="email" required/>
+
+      <button class="small button" type="submit">Edit Task</button>
+  </form>
+  <div>Status: {{message}}</div>
+  <div>User: {{assignedUserObj}}</div>
+</div>
